@@ -1,45 +1,83 @@
-<!--
-  Hit RUN to see this project in action!
-  
-  This project will auto-refresh as you edit the HTML, CSS and JS. See README.md for more info (including how to disable auto-refresh and install packages).
--->
-
 <!DOCTYPE html>
-<html>
-
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player Musik Playlist dengan Lirik</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main>
-    <h1 class="title">Welcome to HTML on Replit!</h1>
-    <p class="description">Get started by editing
-      <code class="code">index.html</code>. The webview will auto-refresh as you edit! (See <code
-        class="code">README.md</code> if you want to
-      disable auto-refresh.)
-    </p>
+<div class="container">
+<div class="header">
+<div class="album-cover paused" id="albumCover">
+<img id="coverImage" src="https://i.scdn.co/image/ab67616d0000b273838a93692501ac2ba0e13a68" alt="Album Cover"/>
+</div>
 
-    <section class="grid">
-      <a href="https://replit.com/learn" class='card'>
-        <h2>Learn &rarr;</h2>
-        <p>Find tutorials on Replit to learn more.</p>
-      </a>
+<div class="header-content">
+<h1 id="songTitle">Dynasty</h1>
+<p id="songInfo"></p>
+</div>
+</div>
 
-      <a href="https://docs.replit.com/category/deployments" class='card'>
-        <h2>Deploy &rarr;</h2>
-        <p>
-          After you are happy with this app, deploy it on Replit!
-        </p>
-      </a>
-    </section>
-  </main>
+<div class="player-container">
+<div class="lyrics-container">
+<div id="lyricsWrapper">
+<!-- Lyrics will be populated here -->
+</div>
+</div>
 
-  <script type="module" src="script.js"></script>
+<div class="progress-container">
+<div class="progress-info">
+<span id="currentTime">0:00</span>
+<span id="duration">0:00</span>
+</div>
+<div id="progressBar">
+<div id="progress"></div>
+</div>
+</div>
 
+<div class="controls">
+<button id="shuffleBtn" class="control-btn" title="Acak">
+<i class="fas fa-random"></i>
+</button>
+<button id="prevBtn" class="control-btn" title="Sebelumnya">
+<i class="fas fa-step-backward"></i>
+</button>
+<button id="playBtn" class="control-btn" title="Putar">
+<i class="fas fa-play"></i>
+</button>
+<button id="nextBtn" class="control-btn" title="Berikutnya">
+<i class="fas fa-step-forward"></i>
+</button>
+<button id="repeatBtn" class="control-btn" title="Ulangi">
+<i class="fas fa-redo"></i>
+</button>
+</div>
+
+<div class="playlist-container">
+<div class="playlist-header">
+<h3>Daftar Putar</h3>
+<div class="playlist-controls">
+<button id="playlistShuffleBtn" class="playlist-btn">
+<i class="fas fa-random"></i> Acak
+</button>
+<button id="playlistOrderBtn" class="playlist-btn active">
+<i class="fas fa-list-ol"></i> Urut
+</button>
+</div>
+</div>
+<ul id="playlist">
+<!-- Playlist items will be populated here -->
+</ul>
+</div>
+</div>
+</div>
+
+<div id="particles"></div>
+
+<audio id="bgMusic"></audio>
+
+<script src="script.js"></script>
 </body>
-
 </html>
